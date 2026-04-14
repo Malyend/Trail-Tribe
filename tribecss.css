@@ -3,7 +3,10 @@ body {
     min-height: 100vh;
 
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-image: linear-gradient(to bottom, lightblue, green,  brown);
+    background-color: darkgreen;
+
+    margin: 0;
+    padding: 0;
 }
 
 #pageWrapper {
@@ -12,13 +15,12 @@ body {
  grid-template-areas: 
  'nav ' 
 'head '
-'news '
 'foot ' ; 
 
 grid-template-columns: 1fr;
-grid-template-rows: 50px 1fr auto auto;
+grid-template-rows: 80px 100% 3fr;
 
-gap: 1em;
+
 }
 
 /*Navigation page*/
@@ -29,7 +31,9 @@ gap: 1em;
    left: 0;
    top: 0;
 
+   background-color: #6b93d6;
 }
+
 .pageNav {
     padding: 0.3rem;
 
@@ -39,8 +43,11 @@ gap: 1em;
     justify-content: center;
     align-items: center;
 }
-/*change once Icon is sent*/
-.pageNav h3 {
+
+.pageNav img{
+    height: 70px;
+
+    border-radius: 1.4rem;
     flex: 0;
     margin-right: auto;
     margin-top: 0;
@@ -55,10 +62,33 @@ gap: 1em;
     padding: 0;
     margin: 0;
 
-    font-size: 1.5em;
+    font-size: 2em;
     background-color: transparent;
 
-    border: none;
+    border-radius: 0.6rem;
+    border: 1px solid black;
+
+    background-color: green;
+}
+
+.Dropdown {
+    display: flex;
+    flex-wrap: wrap;
+
+    position: absolute;
+    background-color: green;
+    right: 0;
+    top: 60px;
+    z-index: 1000;
+}
+.Dropdown ul {
+    text-align: start;
+}
+.Dropdown li {
+    list-style: none;
+}
+.Dropdown a {
+    align-self: start;
 }
 
 /*Header*/ 
@@ -75,6 +105,8 @@ gap: 1em;
     height: 100%;
     object-fit: cover;
     z-index: 0;
+
+    filter: blur(2px);
 }
 
 
@@ -97,13 +129,14 @@ gap: 1em;
     color: whitesmoke;
 
     position: relative;
+    
     min-height: fit-content;
 
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
     width: fit-content;
     margin: 0;
 
-
+    top: 75px;
 }
 
 
@@ -112,27 +145,84 @@ gap: 1em;
 
     font-size: 1.2rem;
 }
+
 #homeHeader p {
     margin: 0;
     font-size: 0.9rem;
+
+    font-weight: 600;
 }
 
 
 /*News*/ 
 .news-feed {
-    grid-area: news ;
-
-    background-color: darkgreen;
-    border: 2px solid black;
+    position: fixed;
     padding: 3px;
+    transform:translateX(-100%);
+    transition: transform 0.3s ease ;
+
+    width: 80%;
+    z-index: 4;
+
+    top: 45%;
 }
 
 #feed {
     display: flex;
     flex-direction: column;
+    position: fixed;
+    z-index: 1;
+    
+    text-align: center;
+
+   
+   background-color: blanchedalmond;
+   border: 2px solid burlywood;
+   padding: 1rem;
+
 }
+
 #feed h2 {
     margin: 0;
+}
+
+#feed ul {
+    display: flex;
+ position: relative;
+ flex-direction: column;
+
+ padding: 0.1rem;
+ margin: 0.2em;
+ 
+}
+#feed li {
+    list-style: none;
+    align-self: start;
+}
+
+.news-feed input[type="button"] {
+    align-self: end;
+    position: absolute;
+    right: -60px;
+    width: 60px;
+
+    padding: 0.6rem;
+    font-size: 1.2rem;
+    z-index: 2;
+
+    background-color: rgb(222, 184, 135);
+    border: none;
+    border-radius: 0.2em;
+}
+
+.news-feed input[type="button"]:active{
+    background-color: antiquewhite;
+}
+
+
+
+.openX {
+    transform: translateX(0);
 }
 
 /*footer*/
@@ -140,6 +230,10 @@ gap: 1em;
 .foot-cont {
     grid-area: foot;
     align-self: end;
+
+    background-color: #451b04;
+    
+
 }
 
 .footer {
@@ -152,15 +246,43 @@ gap: 1em;
 
     flex: 1;
 }
+.footer h3 {
+    margin-top: 2rem;
+    margin-bottom: 0;
+    padding: 0;
+
+    font-size: 1.3rem;
+
+    color: lightblue;
+}
+
+.footer p{
+    align-self: start;
+
+    font-size: 1 rem;
+    
+    color: lightgreen;
+
+    font-weight: 500;
+
+    margin: 0.4rem;
+}
+
+.footer a {
+    text-decoration: none;
+    color: lightblue;
+}
 
 .footer button{
-    margin: 1rem;
-    padding: 1.1rem;
+    margin: 0.8rem;
+    padding: 0.8rem;
 
     border-radius: 0.5rem;
 
-    font-size: 1.3rem;
-    background-color: rgb(15, 80, 15);
+    box-sizing: border-box;
+
+    font-size: 1.2rem;
+    background-color: burlywood;
     border: none;
 
     color: whitesmoke;
