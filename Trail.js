@@ -12,3 +12,19 @@ function openNews() {
         drawNews.value = ">>>";
     }
 }
+
+const dropDown = document.getElementById("dropDown");
+const menu = document.querySelector(".DropDown");
+
+dropDown.addEventListener("click", dropDownMenu);
+
+function dropDownMenu(){
+
+    menu.classList.toggle("openY");
+
+    if (menu.classList.contains("openY")) {
+        dropDown.value = "⋮";
+    } else {
+        dropDown.value = "≡";
+    }
+}
