@@ -1,3 +1,4 @@
+// The News button
 const drawNews = document.getElementById("News-button");
 const news = document.querySelector(".news-feed");
 
@@ -13,6 +14,7 @@ function openNews() {
     }
 }
 
+// The Dropdown menu navigation button
 const dropDown = document.getElementById("dropDown");
 const menu = document.querySelector(".DropDown");
 

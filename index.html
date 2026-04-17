@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,22 +15,32 @@
 </head>
 <body>
     <div id="pageWrapper">
-    <div class="nav-cont" id="homeNav">
-    <nav class="pageNav">
-        <img src="./Images/maskable_icon_x384.png">
+        <div class="nav-cont" id="homeNav">
+            <nav class="pageNav">
 
-        <input type="button" value="≡" id="dropDown">
-        
-        <div class="DropDown">
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a>Contact us</a></li>
-                <li><a>Videos</a></li>
-            </ul>
-        </div> 
-    </div>
+                <div class="TrailLogo">THE <br>TRAIL TRIBE</div>
+                <!--
+                may not need this. Perhaps an alternative would work better.
+                <a href="/index.html" title="The Trail Tribe" rel="home" itemprop="url">
+                     <img src="./Images/maskable_icon_x384.png" alt="Trail Tribe Logo" 
+                    alt decoding="async">
+                </a> -->
+               
 
-    </nav>
+                <input type="button" value="≡" id="dropDown">
+                
+                <div class="DropDown">
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a>Contact us</a></li>
+                        <li><a>Videos</a></li>
+                        <li><a>-charity-name-</a></li>
+                    </ul>
+                </div> 
+            </nav>
+        </div>
+    
+
     
     <div class="header-cont">
         <div id="header-flex">
@@ -43,9 +53,7 @@
             width="375" height="240" 
             autoplay 
             muted 
-            loop 
-            nofullscreen
-            disablepictureinpicture>
+            loop >
             <source src="./Videos/hiking-placeholder.mp4" type="video/mp4">
             </video>
         </div>
@@ -67,7 +75,7 @@
     <footer class="footer">
     
             <h3>Come Join our trail</h3>
-            <button>Follow Us</button>
+            <p id="follow"><u>Follow Us</u></p>
             <br>
 
             <p> TikTok: <a href="https://www.tiktok.com/@thetrialtribe" target="_blank">theTrialTribe</a></p>

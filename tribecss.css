@@ -7,6 +7,7 @@ body {
 
     margin: 0;
     padding: 0;
+    word-wrap: break-word;
 
 }
 
@@ -19,7 +20,7 @@ body {
 'foot ' ; 
 
 grid-template-columns: 1fr;
-grid-template-rows: 80px 100% 3fr;
+grid-template-rows: 80px 100% 50%;
 
 
 }
@@ -31,22 +32,37 @@ grid-template-rows: 80px 100% 3fr;
    position: relative;
    left: 0;
    top: 0;
+   
 
    background-color: #6b93d6;
 }
 
 .pageNav {
-    padding: 0.3rem;
+    padding: 15px 20px;
+    position: relative;
+    top: 0;
 
     margin-bottom: 0.5rem;
     display: flex;
 
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
+.TrailLogo {
+    color: whitesmoke;
+
+    font-family: 'inter', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+
+    letter-spacing: -1.4px;
+    line-height: 0.94rem;
+}
+/*
 .pageNav img{
-    height: 70px;
+
+    line-height: 26px;
 
     border-radius: 1.4rem;
     flex: 0;
@@ -54,11 +70,12 @@ grid-template-rows: 80px 100% 3fr;
     margin-top: 0;
 
     padding: 0;
-}
+} */
 
 .pageNav input[type="button"]{
     flex: 0 1 45px;
     height: 45px;
+
 
     padding: 0;
     margin: 0;
@@ -67,11 +84,11 @@ grid-template-rows: 80px 100% 3fr;
     background-color: transparent;
 
     border-radius: 0.6rem;
-    border: 1px solid black;
+    border: none;
 
-    background-color: green;
+    background-color: #6a8ecd; 
 
-    color: black;
+    color: whitesmoke;
 }
 
 .DropDown {
@@ -79,7 +96,7 @@ grid-template-rows: 80px 100% 3fr;
     flex-wrap: wrap;
 
     position: absolute;
-    background-color: green;
+    background-color: #6a8ecd;
     border-radius: 0.4rem;
     right: 0;
     top: 0;
@@ -87,21 +104,23 @@ grid-template-rows: 80px 100% 3fr;
     z-index: 1000;
 
      transform: translateY(-100%);
-    transition: transform 0.3s ease-in;
+    transition: transform 1s ease-out;
 }
 .DropDown ul {
-    text-align: start;
     flex: 1;
-
     margin-left: auto;
     padding: 0.4rem;
 
     text-align: center;
+    padding: 0;
+    margin: 0;
 }
 .DropDown li {
     list-style: none;
     gap: 0.3rem;
     border-bottom: 2px solid black;
+
+    padding: 0.8rem;
 }
 .DropDown a {
     align-self: start;
@@ -110,8 +129,6 @@ grid-template-rows: 80px 100% 3fr;
 
     font-size: 1.2rem;
     gap: 0.4rem;
-
-    
 }
 
 .DropDown a:active {
@@ -125,7 +142,7 @@ grid-template-rows: 80px 100% 3fr;
 .openY {
     transform: translateY(0);
 
-    display: block;
+   
     top: 76%;
 }
 
@@ -133,6 +150,10 @@ grid-template-rows: 80px 100% 3fr;
 .header-cont {
     grid-area: head;
     position: relative;
+
+    display: flex;
+    justify-content: space-around;
+    
 }
 
 .header-cont video {
@@ -149,20 +170,15 @@ grid-template-rows: 80px 100% 3fr;
 
 
 
-#header-flex {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
 
 #homeHeader {
     display: flex;
     flex-direction: column;
     text-align: center;
-    justify-content: center;
 
     padding: 4rem;
     border-radius: 0.3rem;
+    box-shadow: 4px 3px 25px black;
     z-index: 3;
     color: whitesmoke;
 
@@ -202,7 +218,8 @@ grid-template-rows: 80px 100% 3fr;
     width: 80%;
     z-index: 4;
 
-    top: 45%;
+    top: 20%;
+
 }
 
 #feed {
@@ -216,6 +233,8 @@ grid-template-rows: 80px 100% 3fr;
    
    background-color: blanchedalmond;
    border: 2px solid burlywood;
+
+   box-shadow: 2px 1px 45px;
    padding: 1rem;
 
 }
@@ -250,9 +269,10 @@ grid-template-rows: 80px 100% 3fr;
 
     background-color: rgb(222, 184, 135);
     border: none;
-    border-radius: 0.2em;
+    border-radius: 0.3em;
 
     color: black;
+
 }
 
 .news-feed input[type="button"]:active{
@@ -269,10 +289,13 @@ grid-template-rows: 80px 100% 3fr;
 
 .foot-cont {
     grid-area: foot;
-    align-self: end;
+    align-content: center;
 
     background-color: #451b04;
-    
+
+    position: relative;
+
+    bottom: 0;
 
 }
 
@@ -280,13 +303,17 @@ grid-template-rows: 80px 100% 3fr;
     display: flex;
     flex-direction: column;
 
-    align-items: center;
-    justify-content: center;
+    align-self: end;
+    justify-content: space-around;
     text-align: center;
+    
 
     flex: 1;
 
     padding-bottom: 2rem;
+
+    position: relative;
+    
 }
 .footer h3 {
     margin-top: 2rem;
@@ -309,26 +336,16 @@ grid-template-rows: 80px 100% 3fr;
 
     margin: 0.4rem;
 }
+#follow {
+    font-size: 1.4rem;
+    align-self: center;
+}
 
 .footer a {
     text-decoration: none;
     color: lightblue;
 }
 
-.footer button{
-    margin: 0.8rem;
-    padding: 0.8rem;
-
-    border-radius: 0.5rem;
-
-    box-sizing: border-box;
-
-    font-size: 1.2rem;
-    background-color: burlywood;
-    border: none;
-    
-    color: black;
-}
 
 .footer button::before {
     content: "";
