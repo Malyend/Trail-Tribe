@@ -89,6 +89,7 @@ grid-template-rows: 80px 100% 50%;
     background-color: #6a8ecd; 
 
     color: whitesmoke;
+  
 }
 
 .DropDown {
@@ -100,11 +101,11 @@ grid-template-rows: 80px 100% 50%;
     border-radius: 0.4rem;
     right: 0;
     top: 0;
-    left: 50%;
+    left: 60%;
     z-index: 1000;
 
-     transform: translateY(-100%);
-    transition: transform 1s ease-out;
+     transform: translateY(-100%) translateX(10%);
+    transition: transform 0.8s ease-out;
 }
 .DropDown ul {
     flex: 1;
@@ -235,7 +236,7 @@ grid-template-rows: 80px 100% 50%;
    border: 2px solid burlywood;
 
    box-shadow: 2px 1px 45px;
-   padding: 1rem;
+   padding: 0.6rem;
 
 }
 
@@ -294,7 +295,6 @@ grid-template-rows: 80px 100% 50%;
     background-color: #451b04;
 
     position: relative;
-
     bottom: 0;
 
 }
@@ -303,14 +303,11 @@ grid-template-rows: 80px 100% 50%;
     display: flex;
     flex-direction: column;
 
-    align-self: end;
-    justify-content: space-around;
     text-align: center;
     
-
     flex: 1;
 
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 
     position: relative;
     
@@ -318,27 +315,26 @@ grid-template-rows: 80px 100% 50%;
 .footer h3 {
     margin-top: 2rem;
     margin-bottom: 0;
-    padding: 0;
+    padding: 1rem;
 
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    position: relative;
 
-    color: lightblue;
+    font-weight: 750;
+    line-height: 0.75rem;
+    
+    letter-spacing: -1px;
+
+    color: whitesmoke;
 }
 
 .footer p{
-    align-self: start;
-
-    font-size: 1 rem;
-    
-    color: lightgreen;
-
+    color: whitesmoke;
     font-weight: 500;
+    font-style: italic;
 
-    margin: 0.4rem;
-}
-#follow {
-    font-size: 1.4rem;
-    align-self: center;
+    margin: 0rem;
+    padding: 1rem;
 }
 
 .footer a {
@@ -346,12 +342,36 @@ grid-template-rows: 80px 100% 50%;
     color: lightblue;
 }
 
+.foot-nav {
+    display: flex;
+    flex-wrap: wrap;
 
-.footer button::before {
-    content: "";
+    justify-content: space-evenly;
+    
+    align-items: center;
+    margin: 0;
+    padding: 1.4rem;
+}
+
+.foot-nav li {
+    list-style: none;
+}
+.fa-brands {
+    font-size: 2.4rem;
+}
+
+.fa-tiktok {
+    color: whitesmoke;
+    background-color: black;
+    padding: 0.6rem;
+    border-radius: 1rem;
 
 }
 
-.footer button:hover {
-    background-color: lightcoral;
+.fa-instagram {
+    color: whitesmoke;
+    background-image: linear-gradient(to bottom, purple, red, orange);
+
+    padding: 0.6rem;
+    border-radius: 1rem;
 }

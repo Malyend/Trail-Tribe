@@ -1,3 +1,25 @@
+
+navigator.serviceWorker.register("./serviceWorker.js")
+
+async function updatePWA() {
+    console.log("function started");
+    if ("ServiceWorker" in navigator){
+        const registration = await 
+        navigator.serviceWorker.getRegistration('./');
+        console.log("registration found:", registration)
+
+        if (registration){
+            registration.update();
+            console.log("Checking for updates...");
+
+            registration.onupdatefound(() => {
+                console.log("New Version Found! reloading...");
+                window.location.reload();
+            });
+        }
+    }
+}
+updatePWA()
 // The News button
 const drawNews = document.getElementById("News-button");
 const news = document.querySelector(".news-feed");
