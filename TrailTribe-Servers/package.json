@@ -1,0 +1,37 @@
+{
+  "name": "trailtribe-servers",
+  "version": "1.0.0",
+  "description": "The Server for which The Trail Tribe will be built upon",
+  "keywords": [
+    "Hiking",
+    "Community",
+    "Trail",
+    "Tribe",
+    "The Trail Tribe",
+    "Product reviews"
+  ],
+  "homepage": "https://github.com/Malyend/Trail-Tribe#readme",
+  "bugs": {
+    "url": "https://github.com/Malyend/Trail-Tribe/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Malyend/Trail-Tribe.git"
+  },
+  "license": "ISC",
+  "author": "Roberto Ferreira Teles",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "node-cron": "^4.2.1",
+    "postgres": "^3.4.9",
+    "web-push": "^3.6.7"
+  }
+}
