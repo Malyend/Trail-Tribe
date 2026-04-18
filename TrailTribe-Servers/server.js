@@ -8,6 +8,11 @@ const cors = require('cors');
 const cron = require('node-cron');
 
 //Vapid Keys here
+webPush.setVapidDetails(
+    'mailto:malyendf@gmail.com',
+    process.env.PUBLIC_VAPID_KEY,
+    process.env.PRIVATE_VAPID_KEY
+);
 
 const app = express();
 app.use(cors());

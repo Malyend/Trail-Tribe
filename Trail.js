@@ -1,6 +1,9 @@
 
 navigator.serviceWorker.register("./serviceWorker.js")
 
+//Public VAPID key
+const PUBLIC_VAPID_KEY = 'BHuOL-x5Ui1ZaD_qFa80oVvrIUFwmbs66LI0xajiRrLMc_Ypazc5w79H17urtlEYZ7lh4YctJcZuOn_lABL0HMc';
+
 async function updatePWA() {
     console.log("function started");
     if ("ServiceWorker" in navigator){
