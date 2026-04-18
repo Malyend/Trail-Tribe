@@ -18,3 +18,8 @@ app.use(express.json());
 app.get('/', (req, res) => {
     res.send('Hello World')
 })
+
+//Bottom of everything
+app.listen(8080, '0.0.0.0', () => {
+    console.log('Server is running on')
+})
