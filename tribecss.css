@@ -18,6 +18,10 @@ body {
 
 }
 
+a{
+    color: black;
+}
+
 #pageWrapper {
      display: grid;
 
@@ -368,6 +372,8 @@ grid-template-rows: 80px 100% auto;
     font-size: 2.3rem;
     margin: 0;
     padding: 0;
+
+    box-shadow: 1px 1px 5px black;
 }
 
 .fa-tiktok {
@@ -384,3 +390,89 @@ grid-template-rows: 80px 100% auto;
     padding: 0.6rem 0.2rem;
     border-radius: 1rem;
 }
+
+/* Contact page */
+
+#pageWrapper-Contact {
+    display: grid;
+    grid-template-areas: 
+    'nav'
+    'contact'
+    'foot';
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 100% auto;
+}
+#contact-form-cont {
+    background-color: #6e7a4f;
+    grid-area: contact;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    padding: 0.9rem;
+}
+
+#contact-form {
+    text-align: center;
+     background-color: #185e3f;
+
+     padding: 2.5rem 4rem;
+     border-radius: 0.4rem;
+
+     color: whitesmoke;
+
+     box-shadow: 2px 2px 40px black;
+    
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+
+    flex-wrap: wrap;
+   
+}
+.contact-info div {
+    margin-top: 0;
+    margin-bottom: 1.3rem;
+}
+
+.contact-info label {
+    font-size: 1.2rem;
+}
+
+.contact-info input{
+    width: 80%;
+    border-radius: 0.4rem;
+
+    border: none;
+    padding: 0.4rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.contact-info textarea {
+    padding: 0.5rem 2rem 4rem 0.4rem;
+    margin-top: 0.4rem;
+    border-radius: 0.8rem;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+.contact-info input[type="submit"]{
+    width: 35%;
+
+    align-self: center;
+    padding: 1rem;
+
+    font-size: 1.1rem;
+    background-color: #6a8ecd;
+    color: whitesmoke;
+
+    box-shadow: 2px 2px  80px black;
+}
+
