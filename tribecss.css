@@ -69,10 +69,7 @@ grid-template-rows: 80px 100% auto;
     letter-spacing: -1.4px;
     line-height: 0.94rem;
     text-shadow: 10px 7px 3px black;
-    text-decoration:wavy;
-    text-decoration-color: darkgreen;
-    text-decoration-line: line-through;
-    text-decoration-thickness: 0.05rem;
+    
 }
 /*
 .pageNav img{
@@ -456,7 +453,7 @@ grid-template-rows: 80px 100% auto;
 
 }
 .contact-info textarea {
-    padding: 0.5rem 2rem 4rem 0.4rem;
+    padding: 0.5rem 1rem 4rem 0.4rem;
     margin-top: 0.4rem;
     border-radius: 0.8rem;
 
