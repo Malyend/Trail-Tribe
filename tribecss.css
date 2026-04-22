@@ -466,10 +466,9 @@ grid-template-rows: 80px 100% auto;
 .contact-info input[type="submit"]{
     width: auto;
 
-    align-self: center;
     padding: 1rem;
 
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     background-color: #6a8ecd;
     color: whitesmoke;
 
