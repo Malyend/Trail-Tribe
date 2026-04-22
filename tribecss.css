@@ -207,6 +207,7 @@ grid-template-rows: 80px 100% auto;
     margin: 0.2rem;
 
     font-size: 1.2rem;
+    text-transform: uppercase;
 }
 
 #homeHeader p {
@@ -258,7 +259,7 @@ grid-template-rows: 80px 100% auto;
  position: relative;
  flex-direction: column;
 
- padding: 0.1rem;
+ padding: 0.3rem;
  margin: 0.2em;
  
 }
@@ -275,7 +276,7 @@ grid-template-rows: 80px 100% auto;
 
     padding: 0.6rem;
     font-size: 1.2rem;
-    z-index: 2;
+    z-index: 4;
 
     background-color: #6a8ecd;
     border: none;
@@ -430,6 +431,8 @@ grid-template-rows: 80px 100% auto;
 .contact-info {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     flex-wrap: wrap;
    
@@ -461,7 +464,7 @@ grid-template-rows: 80px 100% auto;
     
 }
 .contact-info input[type="submit"]{
-    width: 35%;
+    width: auto;
 
     align-self: center;
     padding: 1rem;
