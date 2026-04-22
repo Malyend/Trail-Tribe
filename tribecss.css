@@ -352,7 +352,7 @@ grid-template-rows: 80px 100% auto;
     color: lightblue;
 }
 
-.foot-nav {
+.foot-nav ul {
     display: flex;
     flex-wrap: wrap;
 
