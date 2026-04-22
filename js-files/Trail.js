@@ -23,6 +23,9 @@ async function updatePWA() {
     }
 }
 
+document.querySelector('video').disablePictureInPicture = true;
+
+
 // The News button
 const drawNews = document.getElementById("News-button");
 const news = document.querySelector(".news-feed");

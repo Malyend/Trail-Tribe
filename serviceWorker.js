@@ -1,7 +1,7 @@
 
 self.addEventListener('install', (event) => {
     event.waitUntil(
-        caches.open('Trail-v1').then((cache) => {
+        caches.open('Trail-v1.1').then((cache) => {
             return cache.addAll([
                 './',
 
