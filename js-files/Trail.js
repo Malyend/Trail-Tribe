@@ -3,7 +3,7 @@ navigator.serviceWorker.register("./serviceWorker.js")
 
 //Public VAPID key
 const PUBLIC_VAPID_KEY = 'BHuOL-x5Ui1ZaD_qFa80oVvrIUFwmbs66LI0xajiRrLMc_Ypazc5w79H17urtlEYZ7lh4YctJcZuOn_lABL0HMc';
-
+updatePWA()
 async function updatePWA() {
     console.log("function started");
     if ("ServiceWorker" in navigator){
@@ -22,7 +22,7 @@ async function updatePWA() {
         }
     }
 }
-updatePWA()
+
 // The News button
 const drawNews = document.getElementById("News-button");
 const news = document.querySelector(".news-feed");

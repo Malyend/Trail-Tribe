@@ -9,10 +9,18 @@ self.addEventListener('install', (event) => {
                 './Contact.html',
                 './Charity.html',
                 './Videos.html',
-                './serviceWorker.js',
                 './Trail.js',
                 './tribecss.css'
             ])
+        })
+    )
+})
+
+self.addEventListener("fetch", (event) => {
+    event.respondWith(
+        caches.match(event.request).then((response) => {
+            return response ||
+            fetch(event.request);
         })
     )
 })
