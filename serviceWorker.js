@@ -16,7 +16,11 @@ self.addEventListener('install', (event) => {
                 './trail-merch.js',
                 './trail.video.js',
 
-                './tribecss.css'
+                './tribecss.css',
+
+                './Videos/',
+                './Images/',
+                './fonts/'
             ])
         })
     )
