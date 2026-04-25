@@ -43,18 +43,24 @@ function openNews() {
 }
 
 // The Dropdown menu navigation button
-const dropDown = document.getElementById("dropDown");
+const dropButton = document.getElementById("dropDown");
+const dropButtonOut = document.getElementById("dropOut");
 const menu = document.querySelector(".DropDown");
 
-dropDown.addEventListener("click", dropDownMenu);
+dropButton.addEventListener("click", dropDownMenu);
+dropButtonOut.addEventListener("click", dropDisappear)
 
 function dropDownMenu(){
 
-    menu.classList.toggle("openY");
+        menu.classList.add("openY");
 
-    if (menu.classList.contains("openY")) {
         dropDown.value = "⋮";
-    } else {
-        dropDown.value = "≡";
-    }
+        dropDown.style.transition = "1s";
+   
+}
+
+function dropDisappear(){
+    menu.classList.remove("openY");
+    dropDown.value = "≡";
+    dropDown.style.background = "#3c798D";
 }

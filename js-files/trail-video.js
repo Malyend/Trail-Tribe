@@ -1,15 +1,22 @@
 //Drop down menu
-const dropButton = document.getElementById('dropDown');
-const dropMenu = document.querySelector('.DropDown');
+const dropButton = document.getElementById("dropDown");
+const dropButtonOut = document.getElementById("dropOut");
+const menu = document.querySelector(".DropDown");
 
-dropButton.addEventListener("click", dropDownMenu)
+dropButton.addEventListener("click", dropDownMenu);
+dropButtonOut.addEventListener("click", dropDisappear)
 
 function dropDownMenu(){
-    dropMenu.classList.toggle('openY');
 
-     if (dropMenu.classList.contains("openY")) {
+        menu.classList.add("openY");
+
         dropDown.value = "⋮";
-    } else {
-        dropDown.value = "≡";
-    }
+        dropDown.style.transition = "1s";
+   
+}
+
+function dropDisappear(){
+    menu.classList.remove("openY");
+    dropDown.value = "≡";
+    dropDown.style.background = "#3c798D";
 }
