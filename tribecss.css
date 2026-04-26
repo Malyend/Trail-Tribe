@@ -273,70 +273,90 @@ grid-template-rows: 80px 100% auto;
 /*News*/ 
 .news-feed {
     position: fixed;
-    padding: 3px;
+  
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    
     transform:translateX(-100%);
     transition: transform 0.3s ease;
 
-    width: 80%;
-    z-index: 4;
+     background-color: var(--Trail-wood);
+    border: 2px solid var(--Trail-flame);
 
-    top: 20%;
+    z-index: 4;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
 
 }
 
+
+
 #feed {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    z-index: 1;
-    
+
     text-align: center;
-
-   
-   background-color: var(--Trail-wood);
-   border: 2px solid var(--Trail-flame);
-
+    justify-content: space-around;
+    
+    
+  background-color: #3c798D;
    box-shadow: 2px 1px 45px var(--Trail-orange);
    border-radius: 0.6rem;
-   padding: 0.6rem;
+   padding:1rem;
+   margin: 1rem;
 
    color: whitesmoke;
 
 }
-
+/* I'm not too sure what these do*/
+@font-feature-values Otaru Kisa {
+  @annotation { circled: 1; black-boxed: 3; }
+}
+@font-feature-values Taisho Gothic {
+  @annotation { boxed: 1; circled: 4; }
+}
 #feed h2 {
     margin: 0;
+    font-family: "Otaru Kisa", "Taisho Gothic";
+    font-variant: annotation(circled);
+    
 }
 
-#feed ul {
-    display: flex;
- position: relative;
- flex-direction: column;
+#feed p {
+
+
+
+font-weight: 450;
+text-shadow: 3px 2px 35px var(--Trail-flame);
+
 
  padding: 0.3rem;
  margin: 0.2em;
  
 }
-#feed li {
-    list-style: none;
-    align-self: start;
-}
+
 
 .news-feed input[type="button"] {
-    align-self: end;
+
     position: absolute;
-    right: -60px;
-    width: 60px;
+    left: 100%;
+    top: 50%;
+    width: 20%;
+    
 
     padding: 0.6rem;
     font-size: 1.2rem;
-    z-index: 4;
+    z-index: 5;
 
     background-color: var(--Trail-flame);
     border: none;
     border-radius: 0.3em;
 
     color: whitesmoke;
+    transition: 0.4s;
 
 }
 
@@ -348,6 +368,13 @@ grid-template-rows: 80px 100% auto;
 
 .openX {
     transform: translateX(0);
+
+}
+
+
+.openX.news-feed input[type="button"] {
+    left: 80%;
+    z-index: 5; 
 }
 
 /*footer*/

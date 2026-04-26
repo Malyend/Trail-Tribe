@@ -28,7 +28,8 @@ document.querySelector('video').disablePictureInPicture = true;
 
 // The News button
 const drawNews = document.getElementById("News-button");
-const news = document.querySelector(".news-feed");
+const news= document.querySelector(".news-feed");
+const newl = document.getElementById('feed');
 
 drawNews.addEventListener("click", openNews);
 
