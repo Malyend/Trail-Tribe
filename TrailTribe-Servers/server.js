@@ -33,10 +33,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const port = process.env.PORT || 10000;
+
 //user Subscription
 
-app.get('/', (req, res) => {
-    res.send('Hello World')
+
+app.get('/api/news.json', (req, res) => {
+    const news = require('./news.json');
+    res.json(news);
 })
 
 app.post('/', (req, res) => {
@@ -47,6 +51,6 @@ app.post('/', (req, res) => {
 
 
 //Bottom of everything
-app.listen(8080, '0.0.0.0', () => {
-    console.log('Server is running on ')
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Server is running on port ${port}`)
 })

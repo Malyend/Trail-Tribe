@@ -65,3 +65,18 @@ function dropDisappear(){
     dropDown.value = "≡";
     dropDown.style.background = "#3c798D";
 }
+
+// fetch news data
+
+fetch('./api/news.json')
+.then(res => res.json())
+.then(articles => {
+    articles.forEach(article => {
+        const div = document.createElement('div');
+        div.innerHTML =`
+        <h2>${article.title}</h2>
+        <p>${article.body}</p>
+        `
+        document.getElementById('feed').appendChild(div);
+    })
+})
