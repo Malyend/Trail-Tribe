@@ -52,15 +52,17 @@ grid-template-rows: 12% 100% auto;
    left: 0;
    top: 0;
    
-
    background-color: var(--Trail-sky);
+   
+/*
+   
    background-image: url(./Images/Transparent-img/illustration\ trans.png);
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
 
    background-blend-mode:exclusion;
-
+*/
 
 }
 

@@ -7,6 +7,16 @@ const express = require('express');
 const cors = require('cors');
 const cron = require('node-cron');
 const http = require('http');
+const nodemailer = require('nodemailer');
+
+// need to create a Transponder
+const Transponder = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS
+    }
+})
 
 // listen to curl request
 
@@ -42,6 +52,28 @@ app.get('/api/news.json', (req, res) => {
     const news = require('./news.json');
     res.json(news);
 })
+
+app.post('/contact', (req, res) => {
+    const {username, email, message} = req.body;
+
+    const mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: 'thetrailtribeyt@gmail.com',
+        subject: `new message from ${username}`,
+        text: `Email: ${email}\n\nmessage: ${message}`
+    };
+
+    Transponder.sendMail(mailOptions, (error, info) => {
+    if (error) {
+        console.log(error);
+        res.status(500).json({ success: false });
+    } else {
+        res.status(200).json({ success: true });
+    }
+})
+})
+
+
 
 app.post('/', (req, res) => {
     console.log("We recieved: ", req.body)
