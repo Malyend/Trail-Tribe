@@ -37,9 +37,9 @@ function openNews() {
     news.classList.toggle("openX");
     
     if (news.classList.contains("openX")) {
-        drawNews.value = "<<<";
+        drawNews.value = "🔥";
     } else {
-        drawNews.value = ">>>";
+        drawNews.value = "🏕";
     }
 }
 

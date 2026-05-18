@@ -24,38 +24,44 @@
             <input type="button" value="X" id="dropOut">
                 <div id="dropmenu">
                     <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./Contact.html">Contact us</a></li>
+                        <li>
+                            <a href="./index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="./Contact.html">Contact us</a>
+                        </li>
                         <li>-More coming soon-</li>
                     </ul>
-                    </div>
+                </div>
         </div> 
-        <div class="nav-cont" id="homeNav">
+        </div> 
+      <div class="nav-cont" id="homeNav">
+
             <nav class="pageNav">
 
-                <div class="TrailLogo">THE <br>TRAIL TRIBE</div>
-
+                <img src="./Images/Transparent-img/primary trans.png" height="90" width="100">
                 <input type="button" value="≡" id="dropDown">
             </nav>
         </div>
         
         <div id="contact-form-cont">
         <main id="contact-form">
+            <h1>Get in touch</h1>
 
-            <form class="contact-info" action="#" method="post">
+            <form class="contact-info" id="contact-F" action="#" method="post">
                 <div>
                 <label for="Username">Username</label> <br>
-                <input id="Username" type="text" placeholder="Username">
+                <input id="Username" type="text" placeholder="Username" name="Name">
                 </div>
 
                 <div>
                 <label for="Email">Email</label> <br>
-                <input type="email" placeholder="Email" id="Email">
+                <input type="email" placeholder="Email" id="email" name="Email" required>
                 </div>
 
                 <div>
                 <label for="message">Leave us a message</label> <br>
-                <textarea placeholder="type here..." id="message"></textarea>
+                <textarea placeholder="type here..." id="message" name="Message" required></textarea>
                 </div>
 
                 <input type="submit" value="submit" id="submit">

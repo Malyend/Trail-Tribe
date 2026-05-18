@@ -18,20 +18,6 @@ const Transponder = nodemailer.createTransport({
     }
 })
 
-// listen to curl request
-
-const server = http.createServer((req, res) => {
-    if(req.method === 'POST') {
-        let body = '';
-        req.on('data', chunk => {body += chunk.toString(); });
-
-        req.on('end', () => {
-            console.log('recieved from bash: ', body)
-            req.end('data recieved by node!')
-        })
-    }
-});
-
 //Vapid Keys here
 webPush.setVapidDetails(
     'mailto:malyendf@gmail.com',
@@ -39,47 +25,54 @@ webPush.setVapidDetails(
     process.env.PRIVATE_VAPID_KEY
 );
 
+const corsConfig = {
+    origin: ['https://malyend.github.io/Trail-Tribe/', 'http://localhost/5500'],
+    methods: ['GET','POST','DELETE', 'PUT'],
+    allowedHeaders: ("Contact-Type", "Authorisation"),
+    Credentials: true
+};
+
+const logRequests = (req, res, next) => {
+    console.log(`${req.method}, ${req.path} - ${new Date().toISOString()}`)
+    next()
+};
+
 const app = express();
-app.use(cors());
+app.use(cors(corsConfig));
 app.use(express.json());
+app.use(logRequests);
 
-const port = process.env.PORT || 10000;
 
-//user Subscription
+const port = process.env.PORT || 8080;
 
+//user Subscription (for notifications/ Authentication)
+
+//routes
 
 app.get('/api/news.json', (req, res) => {
     const news = require('./news.json');
     res.json(news);
 })
 
-app.post('/contact', (req, res) => {
-    const {username, email, message} = req.body;
+app.post('/contact', (req, res, next) => {
+    const {name, email, message} = req.body
 
     const mailOptions = {
         from: process.env.EMAIL_USER,
-        to: 'thetrailtribeyt@gmail.com',
-        subject: `new message from ${username}`,
-        text: `Email: ${email}\n\nmessage: ${message}`
-    };
+        to: process.env.EMAIL_USER,
+        subject: `New message recieved from ${name}`,
+        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+    }
 
     Transponder.sendMail(mailOptions, (error, info) => {
-    if (error) {
-        console.log(error);
-        res.status(500).json({ success: false });
-    } else {
-        res.status(200).json({ success: true });
-    }
+        if(error){
+            res.status(500).json({ message: 'Failed' })
+        } else{
+            res.status(200).json({ message: 'success' })
+        }
+    })
 })
-})
 
-
-
-app.post('/', (req, res) => {
-    console.log("We recieved: ", req.body)
-
-    res.send("We recieved a new update!")
-})
 
 
 //Bottom of everything
